@@ -18,7 +18,13 @@ bool mgos_adc_enable(int pin) {
 }
 
 int mgos_adc_read(int pin) {
-  return pin == 0 ? 0xFFFF & system_adc_read() : -1;
+  int16_t res;
+#if MGOS_ADC_MODE_VDD
+  res = system_get_vdd33();
+#else
+  res = system_adc_read();
+#endif
+  return pin == 0 ? 0xFFFF & res : -1;
 }
 
 static int s_adc_at_boot = 0;
