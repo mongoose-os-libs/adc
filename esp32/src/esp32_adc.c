@@ -33,7 +33,7 @@ bool mgos_adc_enable(int pin) {
 }
 
 int mgos_adc_read(int pin) {
-  return adc1_get_voltage(esp32_get_channel(pin));
+  return adc1_get_raw(esp32_get_channel(pin));
 }
 
 bool mgos_adc_init(void) {
