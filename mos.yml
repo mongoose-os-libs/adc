@@ -5,9 +5,8 @@ version: 1.0
 
 platforms: [ esp32, esp8266 ]
 
-sources:
-  - src
-  - ${arch}/src
+includes:
+  - include
 
 libs:
 
