@@ -12,7 +12,7 @@
 #ifndef CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_
 #define CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_
 
-#include <inttypes.h>
+#include <stdbool.h>
 
 #ifdef __cplusplus
 extern "C" {
