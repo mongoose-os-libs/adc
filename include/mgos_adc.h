@@ -14,6 +14,10 @@
 
 #include <stdbool.h>
 
+#if CS_PLATFORM == CS_P_ESP32
+#include "esp32/esp32_adc.h"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
@@ -21,8 +25,14 @@ extern "C" {
 /* Configure and enable ADC */
 bool mgos_adc_enable(int pin);
 
-/* Read from the analog pin */
+/* Read from the analog pin. Returns raw value. */
 int mgos_adc_read(int pin);
+
+/*
+ * Read from the specified analog pin.
+ * Returns voltage on the pin, in mV.
+ */
+int mgos_adc_read_voltage(int pin);
 
 #ifdef __cplusplus
 }
