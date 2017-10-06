@@ -1,2 +1,6 @@
 sources:
   - esp32/src
+
+config_schema:
+  # https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/adc.html#adc-calibration
+  - ["sys.esp32_adc_vref", "i", 0, {title: "ADC Vref, in mV"}]

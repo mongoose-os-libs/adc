@@ -13,6 +13,7 @@
 #include "common/platform.h"
 
 #include "mgos_adc.h"
+#include "mgos_sys_config.h"
 
 #define MGOS_ESP32_ADC1_WIDTH ADC_WIDTH_12Bit
 
@@ -80,5 +81,8 @@ void esp32_adc_set_vref(int vref_mv) {
 }
 
 bool mgos_adc_init(void) {
+  if (get_cfg()->sys.esp32_adc_vref > 0) {
+    esp32_adc_set_vref(get_cfg()->sys.esp32_adc_vref);
+  }
   return true;
 }
