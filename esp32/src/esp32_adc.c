@@ -81,8 +81,8 @@ void esp32_adc_set_vref(int vref_mv) {
 }
 
 bool mgos_adc_init(void) {
-  if (get_cfg()->sys.esp32_adc_vref > 0) {
-    esp32_adc_set_vref(get_cfg()->sys.esp32_adc_vref);
+  if (mgos_sys_config_get_sys_esp32_adc_vref() > 0) {
+    esp32_adc_set_vref(mgos_sys_config_get_sys_esp32_adc_vref());
   }
   return true;
 }
