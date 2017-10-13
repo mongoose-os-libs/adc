@@ -3,6 +3,10 @@
  * All rights reserved
  */
 
+/*
+ * ADC API specific to the ESP32 platform.
+ */
+
 #ifndef CS_MOS_LIBS_ADC_INCLUDE_ESP32_ESP32_ADC_H_
 #define CS_MOS_LIBS_ADC_INCLUDE_ESP32_ESP32_ADC_H_
 
@@ -13,7 +17,7 @@ extern "C" {
 #endif /* __cplusplus */
 
 /*
- * Set ADC voltage reference, used to onvert raw values to voltage.
+ * Set ADC voltage reference, used to convert raw values to voltage.
  * See
  * https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/adc.html#adc-calibration
  * for more details.

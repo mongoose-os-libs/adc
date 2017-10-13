@@ -4,9 +4,10 @@
  */
 
 /*
- * See on GitHub:
- * [mgos_adc.h](https://github.com/cesanta/mongoose-os/blob/master/mgos_adc.h),
- * [mgos_adc.c](https://github.com/cesanta/mongoose-os/blob/master/mgos_adc.c)
+ * ADC API.
+ *
+ * See https://en.wikipedia.org/wiki/Analog-to-digital_converter for the
+ * backround information.
  */
 
 #ifndef CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_
