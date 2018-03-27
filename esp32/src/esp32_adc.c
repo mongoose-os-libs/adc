@@ -49,8 +49,8 @@ static bool esp32_update_channel_settings(struct esp32_adc_channel_info *ci) {
       adc1_config_channel_atten(ci->ch, ci->atten) != ESP_OK) {
     return false;
   }
-  esp_adc_cal_get_characteristics(s_vref, ci->atten, MGOS_ESP32_ADC1_WIDTH,
-                                  &ci->chars);
+  esp_adc_cal_characterize(ADC_UNIT_1, ci->atten, MGOS_ESP32_ADC1_WIDTH, s_vref,
+                           &ci->chars);
   return true;
 }
 
@@ -73,7 +73,9 @@ int mgos_adc_read(int pin) {
 int mgos_adc_read_voltage(int pin) {
   struct esp32_adc_channel_info *ci = esp32_adc_get_channel_info(pin);
   if (ci == NULL) return false;
-  return adc1_to_voltage(ci->ch, &ci->chars);
+  uint32_t voltage;
+  esp_adc_cal_get_voltage(ci->ch, &ci->chars, &voltage);
+  return voltage;
 }
 
 void esp32_adc_set_vref(int vref_mv) {
