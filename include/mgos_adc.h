@@ -15,13 +15,6 @@
  * limitations under the License.
  */
 
-/*
- * ADC API.
- *
- * See https://en.wikipedia.org/wiki/Analog-to-digital_converter for the
- * backround information.
- */
-
 #ifndef CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_
 #define CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_
 
