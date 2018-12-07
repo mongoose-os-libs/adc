@@ -38,6 +38,9 @@ extern "C" {
  */
 void esp32_adc_set_vref(int vref_mv);
 
+void esp32_adc_set_width(int width);
+bool esp32_set_channel_attenuation(int pin, int atten);
+
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
