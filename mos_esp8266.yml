@@ -1,4 +1,0 @@
-sources:
-  - esp8266/src
-includes:
-  - esp8266/include
