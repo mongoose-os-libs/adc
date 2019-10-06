@@ -3,7 +3,7 @@ type: lib
 description: ADC support
 version: 1.0.0
 
-platforms: [ esp32, esp8266 ]
+platforms: [ esp32, esp8266, stm32 ]
 
 includes:
   - include

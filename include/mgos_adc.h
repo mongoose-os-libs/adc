@@ -15,18 +15,20 @@
  * limitations under the License.
  */
 
-#ifndef CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_
-#define CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_
+#pragma once
 
 #include <stdbool.h>
 
 #if CS_PLATFORM == CS_P_ESP32
 #include "esp32/esp32_adc.h"
 #endif
+#if CS_PLATFORM == CS_P_STM32
+#include "stm32/stm32_adc.h"
+#endif
 
 #ifdef __cplusplus
 extern "C" {
-#endif /* __cplusplus */
+#endif
 
 /* Configure and enable ADC */
 bool mgos_adc_enable(int pin);
@@ -42,6 +44,4 @@ int mgos_adc_read_voltage(int pin);
 
 #ifdef __cplusplus
 }
-#endif /* __cplusplus */
-
-#endif /* CS_MOS_LIBS_ADC_SRC_MGOS_ADC_H_ */
+#endif
