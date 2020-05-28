@@ -81,7 +81,7 @@ bool stm32_adc_enable_input(int unit_no, int input_no) {
   // Sampling time of at least 5 uS is required for Vrefint and Vts.
   // We use it for external sources as well.
   // ADCCLK = 80 mhz / 10 * 47.5 = ~6 uS
-  uint32_t smp_sel = 5;
+  uint32_t smp_sel = 10;
   if (input_no < 10) {
     MODIFY_REG(regs->SMPR1, (7 << (input_no * 3)), (smp_sel << (input_no * 3)));
   } else {
