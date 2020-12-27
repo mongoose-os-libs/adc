@@ -16,6 +16,10 @@ sources:
 conds:
   - when: mos.platform == "esp32"
     apply:
+      build_vars:
+        ESP_IDF_EXTRA_COMPONENTS: >
+          ${build_vars.ESP_IDF_EXTRA_COMPONENTS}
+          esp_adc_cal
       config_schema:
         # https://esp-idf.readthedocs.io/en/latest/api-reference/peripherals/adc.html#adc-calibration
         - ["sys.esp32_adc_vref", "i", 0, {title: "ADC Vref, in mV"}]
